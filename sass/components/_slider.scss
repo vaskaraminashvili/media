@@ -1,0 +1,215 @@
+.main_slider__box {
+  display: flex;
+}
+
+.main_slider {
+  max-width: 77.5rem;
+
+  &__item {
+    position: relative;
+  }
+  &__info {
+    position: absolute;
+    bottom: 1rem;
+    left: 2.7rem;
+  }
+  &__btn {
+    display: inline-block;
+    @include eggButton();
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  &__title {
+    a {
+      display: inline-block;
+      color: $color-white;
+      font-size: 3rem;
+    }
+  }
+  &__text {
+    color: $color-white;
+    font-size: 1.4rem;
+  }
+}
+.main_slider-nav {
+  width: calc(100% - 77.5rem);
+
+  background-color: #616971;
+  padding: 4rem 1.5rem 0.5rem 3.5rem;
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
+  .slick-slide {
+    margin-bottom: 2rem;
+  }
+  &__item {
+    display: flex !important;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    @include respond("laptop") {
+      font-size: 1.2rem;
+    }
+  }
+  &__text {
+    color: $color-white;
+    margin-bottom: 1rem;
+    font-size: inherit;
+    line-height: 1.7rem;
+  }
+  &__btn {
+    @include eggButton($color-tag, $bg-grey);
+    padding: 0.5rem 1.5rem;
+    font-size: inherit;
+  }
+  &__imgBox {
+    display: flex;
+    height: 9.2rem;
+  }
+  &__img {
+    width: 12.2rem;
+    object-fit: cover;
+  }
+}
+
+.slider-progress {
+  width: 3px;
+  height: 100%;
+
+  background: $bg-grey;
+  margin-right: 3px;
+  border-radius: 2rem;
+}
+.slider-progress .progress {
+  width: 3px;
+}
+.slick-current {
+  .main_slider-nav__btn {
+    @include eggButton();
+    padding: 0.5rem 1.5rem;
+  }
+  .slider-progress .progress {
+    width: 3px;
+    height: 40%;
+    background: $color-primary;
+    transition: all 5s ease;
+    animation: progressBar 2.5s infinite linear both;
+  }
+}
+
+@keyframes progressBar {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+@keyframes progressBarHorizontal {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@include respond(tab-land) {
+  .slick-prev,
+  .slick-next {
+    transform: translateY(0);
+  }
+  .slick-prev {
+    left: 0.5rem;
+  }
+  .slick-next {
+    right: 0.5rem;
+  }
+  .main_slider__box {
+    display: block;
+  }
+  .main_slider {
+    max-width: 100%;
+
+    &__img {
+      width: 100%;
+    }
+  }
+  .main_slider-nav {
+    width: 100%;
+    &__imgBox {
+      flex-direction: column-reverse;
+    }
+    &__img {
+      height: 100%;
+    }
+  }
+
+  .slider-progress {
+    width: 100%;
+    height: 3px;
+    margin-top: 3px;
+    .progress {
+      height: 3px;
+    }
+  }
+  .slick-current {
+    .slider-progress .progress--horizontal {
+      width: 100%;
+      height: 3px;
+      animation: progressBarHorizontal 2.5s infinite linear both;
+    }
+  }
+}
+@include respond(phone) {
+  .main_slider {
+    position: relative;
+    &__info {
+      @include absCenter;
+      top: 65%;
+      z-index: 5;
+    }
+    &__text {
+      display: none;
+    }
+    &__title {
+      a {
+        font-size: 1.2rem;
+      }
+    }
+    &__gradiant {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #031221bd 100%);
+    }
+    .slick-dots {
+      bottom: 5px;
+      z-index: 6;
+    }
+  }
+
+  .main_slider.slick-dotted {
+    margin-bottom: 0;
+  }
+  .main_slider-nav {
+    display: none;
+  }
+}
+// .slider-progress {
+//   width: 100%;
+//   height: 3px;
+//   background: #eee;
+// }
+// .slider-progress .progress {
+//   width: 0%;
+//   height: 3px;
+//   background: #000;
+// }

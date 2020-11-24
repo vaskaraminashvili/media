@@ -1,0 +1,131 @@
+.quicklinks {
+  @include respond(tab-land) {
+    display: none;
+  }
+  border-bottom: 1px solid #e4e4e4;
+  &__list {
+    display: flex;
+    width: 100%;
+    margin: 0 6.25rem;
+    justify-content: space-between;
+  }
+  &__link {
+    padding: 1.3rem;
+    display: block;
+    font-size: 1.2rem;
+    color: $color-text;
+    &:hover {
+      background-color: #f4f4f5;
+      color: inherit;
+    }
+  }
+  &__icon {
+    width: 1.8rem;
+    margin-right: 0.6rem;
+  }
+}
+
+.main_logo {
+  width: 6.9rem;
+}
+.main_navbar {
+  .nav-link {
+    display: block;
+    margin-right: 1rem;
+  }
+  &__dropdown {
+    padding: 0;
+    a {
+      position: relative;
+      padding-right: 3rem;
+      border-left: 0.3rem solid transparent;
+      &:hover {
+        transition: all 0.3s ease;
+        color: $color-primary;
+        border-color: $color-primary;
+      }
+    }
+    background-color: $bg-grey;
+    border: none;
+    border-bottom-left-radius: 0.6rem;
+    border-bottom-right-radius: 0.6rem;
+    &:before {
+      content: "";
+      @include absCenter;
+      top: -4px;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+      width: 1.5rem;
+      height: 1rem;
+      background-color: $bg-grey;
+    }
+  }
+  &__live {
+    padding-left: 0.8rem;
+    position: relative;
+    color: $color-primary;
+    margin-right: 1.5rem;
+    &:hover {
+      color: $color-primary;
+    }
+    &:before {
+      content: "";
+      @include absCenter;
+      left: -0.5rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border-radius: 500px;
+      background-color: $color-primary;
+    }
+  }
+  &__tickets {
+    @include eggButton($color: $color-white);
+    margin-right: 1.5rem;
+  }
+}
+.lng_switcher {
+  @include eggButton($bgc: $bg-grey, $color: $color-text, $border: true);
+}
+
+@include respond(laptop) {
+  .navbar .nav-item .dropdown-menu {
+    display: none;
+  }
+
+  .navbar .nav-item:hover .dropdown-menu {
+    display: block;
+  }
+
+  .navbar .nav-item .dropdown-menu {
+    margin-top: 0;
+  }
+}
+
+@include respond(tab-land) {
+  .navbar-toggler {
+    order: 1;
+  }
+  .main_navbar__mobileLang {
+    order: 2;
+    margin-right: auto;
+    margin-left: 20px;
+  }
+  .navbar-brand {
+    order: 3;
+    margin-right: auto;
+  }
+
+  .main_navbar__btns {
+    order: 4;
+  }
+  .navbar-collapse {
+    order: 8;
+  }
+}
+@include respond(phone) {
+  .navbar-brand {
+    margin: auto;
+  }
+  .main_logo {
+    width: 4.5rem;
+  }
+}

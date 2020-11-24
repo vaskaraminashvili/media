@@ -1,0 +1,61 @@
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin eggButton($color: $color-white, $bgc: $color-primary, $border: null) {
+  color: $color;
+  background-color: $bgc;
+  border-radius: 4.4rem;
+  padding: 1rem 2rem;
+  @if ($border) {
+    border: 1px solid #e6e7eb;
+  }
+  &:hover {
+    color: $color;
+  }
+}
+
+// MEDIA QUERY MANAGER
+/*
+
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- laptop
+- big-desktop
+
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == laptop {
+    @media only screen and (min-width: 85.375em) {
+      @content;
+    } //1366
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
