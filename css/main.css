@@ -28,7 +28,7 @@ html {
   }
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 36em) {
   html {
     font-size: 50%;
   }
@@ -351,7 +351,7 @@ span {
   }
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 36em) {
   .main_slider {
     position: relative;
   }
@@ -463,7 +463,7 @@ span {
   color: #fff;
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 36em) {
   .news_mobile_slider {
     /* the parent */
   }
@@ -682,7 +682,7 @@ span {
   }
 }
 
-@media only screen and (max-width: 37.5em) {
+@media only screen and (max-width: 36em) {
   .navbar-brand {
     margin: auto;
   }
