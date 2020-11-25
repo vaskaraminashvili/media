@@ -11,7 +11,23 @@ li,
 span {
   font-size: 1.4rem;
 }
-
+.heading-secondary {
+  font-size: 2.6rem;
+  position: relative;
+  margin-bottom: 2rem;
+  &:after {
+    content: "";
+    position: absolute;
+    background-color: $color-primary;
+    height: 4px;
+    width: 5rem;
+    border-radius: 2rem;
+    bottom: -1rem;
+    border-radius: 2rem;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
 // .heading-primary {
 //     color: $color-white;
 //     text-transform: uppercase;

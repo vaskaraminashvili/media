@@ -1,10 +1,19 @@
 .main_slider__box {
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .main_slider {
   max-width: 77.5rem;
-
+  &__gradiant {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #031221bd 100%);
+  }
   &__item {
     position: relative;
   }
@@ -12,6 +21,7 @@
     position: absolute;
     bottom: 1rem;
     left: 2.7rem;
+    z-index: 5;
   }
   &__btn {
     display: inline-block;
@@ -29,6 +39,9 @@
   &__text {
     color: $color-white;
     font-size: 1.4rem;
+    &:hover {
+      color: $color-white;
+    }
   }
 }
 .main_slider-nav {
@@ -171,7 +184,6 @@
     &__info {
       @include absCenter;
       top: 65%;
-      z-index: 5;
     }
     &__text {
       display: none;
@@ -181,15 +193,7 @@
         font-size: 1.2rem;
       }
     }
-    &__gradiant {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 50%;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #031221bd 100%);
-    }
+
     .slick-dots {
       bottom: 5px;
       z-index: 6;
@@ -203,13 +207,3 @@
     display: none;
   }
 }
-// .slider-progress {
-//   width: 100%;
-//   height: 3px;
-//   background: #eee;
-// }
-// .slider-progress .progress {
-//   width: 0%;
-//   height: 3px;
-//   background: #000;
-// }

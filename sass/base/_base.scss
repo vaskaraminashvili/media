@@ -9,6 +9,13 @@
 html {
   // This defines what 1rem is
   font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  @include respond(tab-port) {
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+  @include respond(phone) {
+    // width < 600?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
 }
 
 ul,
@@ -23,6 +30,23 @@ a {
   color: $color-text;
   text-decoration: none;
   &:hover {
-    color: $color-text;
+    color: inherit;
   }
 }
+
+// @include respond(tab-port) {
+//   .navbar-brand {
+//     margin: auto;
+//   }
+//   .main_navbar {
+//     margin-left: -2rem;
+//     margin-right: -2rem;
+//   }
+//   .main_logo {
+//     width: 4.5rem;
+//   }
+//   body {
+//     padding: 2rem;
+//     padding-top: 0;
+//   }
+// }
